@@ -4,15 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ma.magtec.LoginActivity">
+    tools:context="ma.loginregister.LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <RelativeLayout
+        android:layout_width="395dp"
+        android:layout_height="587dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="363dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="false"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/etPassword"
+            android:layout_alignStart="@+id/etPassword"
+            android:layout_marginTop="55dp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="363dp"
+            android:layout_height="48dp"
+            android:text="Login"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="102dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/etPassword"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="Register"
+            android:textColor="#ff6641"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.299"
+            android:layout_below="@+id/btnLogin"
+            android:layout_alignRight="@+id/btnLogin"
+            android:layout_alignEnd="@+id/btnLogin"
+            android:layout_marginRight="101dp"
+            android:layout_marginEnd="101dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="363dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="59dp"
+            android:layout_below="@+id/etUsername"
+            android:layout_alignLeft="@+id/btnLogin"
+            android:layout_alignStart="@+id/btnLogin"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not a Member?"
+            android:textSize="15dp"
+            android:layout_alignBaseline="@+id/tvRegister"
+            android:layout_alignBottom="@+id/tvRegister"
+            android:layout_toLeftOf="@+id/tvRegister"
+            android:layout_toStartOf="@+id/tvRegister"
+            android:layout_marginRight="22dp"
+            android:layout_marginEnd="22dp" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
