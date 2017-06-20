@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText etUsername = (EditText) findViewById(R.id.etUsername);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        final EditText etUsername = (EditText) findViewById(R.id.etEventdescription);
+        final EditText etPassword = (EditText) findViewById(R.id.etDate);
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegister);
         final Button bLogin = (Button) findViewById(R.id.btnLogin);
 
@@ -51,11 +51,10 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (success) {
                                 String name = jsonResponse.getString("name");
-                                int age = jsonResponse.getInt("age");
+
 
                                 Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
                                 intent.putExtra("name", name);
-                                intent.putExtra("age", age);
                                 intent.putExtra("username", username);
                                 LoginActivity.this.startActivity(intent);
                             } else {

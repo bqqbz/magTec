@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -16,26 +17,23 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class RegisterActivity extends AppCompatActivity {
-
+public class SetEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_set_event);
 
-        final EditText etAge = (EditText) findViewById(R.id.etAge);
-        final EditText etName = (EditText) findViewById(R.id.etName);
-        final EditText etUsername = (EditText) findViewById(R.id.etEventdescription);
-        final EditText etPassword = (EditText) findViewById(R.id.etDate);
-        final Button bRegister = (Button) findViewById(R.id.btnCommitEvent);
+        final EditText etEventdescription = (EditText) findViewById(R.id.etEventdescription);
+        final EditText etEventname = (EditText) findViewById(R.id.etEventname);
+        final EditText etDate = (EditText) findViewById(R.id.etDate);
+        final Button btnCommitEvent = (Button) findViewById(R.id.btnCommitEvent);
 
-        bRegister.setOnClickListener(new View.OnClickListener() {
+        btnCommitEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String name = etName.getText().toString();
-                final String username = etUsername.getText().toString();
-                final int age = Integer.parseInt(etAge.getText().toString());
-                final String password = etPassword.getText().toString();
+                final String eventname = etEventname.getText().toString();
+                final String eventdescription = etEventdescription.getText().toString();
+                final String date = etDate.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -44,13 +42,13 @@ public class RegisterActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                RegisterActivity.this.startActivity(intent);
+                                Intent intent = new Intent(SetEventActivity.this, AdminAreaActivity.class);
+                                SetEventActivity.this.startActivity(intent);
 
-                                Toast.makeText(RegisterActivity.this, "Registering successfully!",
+                                Toast.makeText(SetEventActivity.this, "Committing successfully!",
                                         Toast.LENGTH_LONG).show();
                             } else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(SetEventActivity.this);
                                 builder.setMessage("Register Failed")
                                         .setNegativeButton("Retry", null)
                                         .create()
@@ -62,10 +60,13 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(name, username, password, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+                SetEventRequest registerRequest = new SetEventRequest(eventname, eventdescription, date, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(SetEventActivity.this);
                 queue.add(registerRequest);
             }
         });
+
+
+
     }
 }

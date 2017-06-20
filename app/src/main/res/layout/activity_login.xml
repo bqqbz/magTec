@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/etUsername"
+            android:id="@+id/etEventdescription"
             android:layout_width="363dp"
             android:layout_height="43dp"
             android:ems="10"
@@ -25,8 +25,8 @@
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="16dp"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/etPassword"
-            android:layout_alignStart="@+id/etPassword"
+            android:layout_alignLeft="@+id/etDate"
+            android:layout_alignStart="@+id/etDate"
             android:layout_marginTop="55dp" />
 
         <Button
@@ -37,7 +37,7 @@
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="102dp"
             android:layout_marginTop="6dp"
-            android:layout_below="@+id/etPassword"
+            android:layout_below="@+id/etDate"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:layout_marginEnd="101dp" />
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etDate"
             android:layout_width="363dp"
             android:layout_height="43dp"
             android:ems="10"
@@ -67,7 +67,7 @@
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="40dp"
             tools:layout_editor_absoluteY="59dp"
-            android:layout_below="@+id/etUsername"
+            android:layout_below="@+id/etEventdescription"
             android:layout_alignLeft="@+id/btnLogin"
             android:layout_alignStart="@+id/btnLogin"
             android:layout_marginTop="8dp" />

@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".AdminAreaActivity" />
+        <activity android:name=".SetEventActivity" />
         <activity android:name=".UserAreaActivity" ></activity>
     </application>
 

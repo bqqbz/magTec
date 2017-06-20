@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ma.magtec.RegisterActivity"
+    tools:context="ma.magtec.SetEventActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/etEventname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/etEventdescription"
@@ -37,8 +37,8 @@
             android:layout_alignLeft="@+id/etDate"
             android:layout_alignStart="@+id/etDate"
             android:ems="10"
-            android:hint="Username"
-            android:inputType="textPersonName"
+            android:hint="Description"
+            android:inputType="text"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="59dp" />
 
@@ -46,27 +46,14 @@
             android:id="@+id/etDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/etAge"
-            android:layout_alignLeft="@+id/etAge"
-            android:layout_alignStart="@+id/etAge"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            tools:layout_editor_absoluteX="85dp"
-            tools:layout_editor_absoluteY="102dp" />
-
-        <EditText
-            android:id="@+id/etAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Age"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="77dp"
-            tools:layout_editor_absoluteY="162dp"
             android:layout_above="@+id/btnCommitEvent"
             android:layout_alignLeft="@+id/btnCommitEvent"
-            android:layout_alignStart="@+id/btnCommitEvent" />
+            android:layout_alignStart="@+id/btnCommitEvent"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="102dp" />
 
         <Button
             android:id="@+id/btnCommitEvent"
@@ -74,7 +61,7 @@
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Register"
+            android:text="Commit"
             tools:layout_editor_absoluteX="77dp"
             tools:layout_editor_absoluteY="214dp" />
 
